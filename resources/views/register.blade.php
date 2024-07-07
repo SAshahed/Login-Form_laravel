@@ -34,14 +34,17 @@
             </div>
           </div>
         </div>
+        <span style="color:  red;">{{ $errors->first('name')}} </span>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email" name=email  required>
+          <input type="email" class="form-control" placeholder="Email" name=email required value = "{{ old('email') }}" 
+                   onblur="duplicateEmail(this)">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
         </div>
+        <span style="color:  red;" class="duplicate_message">{{ $errors->first('email')}} </span>
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Password" name=password  required>
           <div class="input-group-append">
@@ -50,6 +53,7 @@
             </div>
           </div>
         </div>
+        <span style="color:  red;">{{ $errors->first('password')}} </span>
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Confirm Password" name=confirm_password  required>
           <div class="input-group-append">
@@ -58,6 +62,7 @@
             </div>
           </div>
         </div>
+        <span style="color:  red;">{{ $errors->first('confirm_password')}} </span>
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
@@ -93,6 +98,33 @@
 <script src="{{ url('public/backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{ url('public/backend/dist/js/adminlte.min.js')}}"></script>
+
+<script type="text/javascript">
+  function duplicateEmail(element) {
+    var email = $(element).val();
+    //alert(email);
+    $.ajax({
+      type: "POST",
+      url: '{{ url('checkemail')}}',
+      data : {
+        email: email,
+        _token: "{{ csrf_token() }}"
+      },
+      dataType: "json",
+      success: function(res) {
+        if(res.exists){
+          $('.duplicate_message').html("This email already taken,try another");
+        } else {
+          $(".duplicate_message").html("");
+        }
+      },
+      error:function(jqXHR, exception){
+
+      }
+
+    });
+  }
+  </script>
 </body>
 </html>
 

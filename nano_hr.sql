@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2024 at 11:35 PM
+-- Generation Time: Jul 07, 2024 at 09:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -149,7 +149,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('y7zAldrvIEs8NSutmTkKd6YEEACS4N6rcIuifxE7', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMFN1Mm9UU3F1TlZNNVB2czFEM3NiSUFtOWNGaG9ydWt0c1Q4RGVjbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHBzOi8vbG9jYWxob3N0L05hbm9IUi9yZWdpc3RlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1720213793);
+('Iu2pYHPAxQZWGr2P141d9c2bCBN4V9lipfQpwyoj', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicEpiR1dFbllKc3JJZHdjZVU2aGxHNURFa0kzQVZhamw0M3gyV3dlVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjM6Imh0dHA6Ly9sb2NhbGhvc3QvTmFub0hSIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1720295500),
+('XpvTjKSQfA8HZdo6S0TLSkPzGY3KBVuVo8DjAPur', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUE5WSDNVS3ByQTZ4MExQT1M4ZWhqTzZMM3pabXNQZzk0U0RNeGVnNSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3QvTmFub0hSL3JlZ2lzdGVyIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1720381927);
 
 -- --------------------------------------------------------
 
@@ -167,6 +168,17 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Afra', 'shhrmbd@gmail.com', NULL, '$2y$12$Kc9jEmtTsCiHvqDzxi7s3.CiQoN4.aAVv79Xl5SYDc4.vc/UVgihS', 'rmVE1s7b3NnVLtloVWlUSWtagO5ZeboRT5Pd5IR1hOn8afhv9I', '2024-07-06 03:29:58', '2024-07-06 03:29:58'),
+(2, 'Ruma Sultana', 'ruma@gmail.com', NULL, '$2y$12$6sZMyYBn2YEZP.UEuobPO.OJDK0JOvQvjjIxTd7GGNxGz40O.pBmu', 'HwITgiIW1kMYMSDsw3jMJqeqvYPIQAJuchwnjZvFd8KYJsWvRU', '2024-07-06 03:31:57', '2024-07-06 03:31:57'),
+(3, 'Umair', 'umair@gmail.com', NULL, '$2y$12$SNy1kAPdyfNjw7Banwb1G.sG/6wmQPBl4/eCiHmDLTVCmZXQvianq', 'C3xyFqMOD1IB4DKIuusIfEVP3fgWU5Xb00JCNbGO3Z4ntCwsdu', '2024-07-06 13:24:24', '2024-07-06 13:24:24'),
+(4, 'Abrar', 'abrar@gmail.com', NULL, '$2y$12$oIi9AIgMIo6pXeg41WbyS.HSNXFOYPn5sO9Qj1pt.CD9izUhB1RqC', 'QsIhJlN8efyJhwJB4sUGduMt5fEpGDBoIE5sGsIyAPiFQTq1HB', '2024-07-06 13:51:40', '2024-07-06 13:51:40'),
+(5, 'Mr.test', 'test@gmail.com', NULL, '$2y$12$ek9ieTDne03eZoQeOE7xtOBG.ZWpSUqvyHpvZP19Ym8OAC8c7fbNO', 'Jc0hbL87zS5TEGulmqvg9yNLPHTFClnHfbS7a0upMZudbTk79B', '2024-07-07 13:12:18', '2024-07-07 13:12:18');
 
 --
 -- Indexes for dumped tables
@@ -257,7 +269,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

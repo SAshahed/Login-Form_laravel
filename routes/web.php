@@ -12,5 +12,6 @@ use App\Http\Controllers\AuthController;
  Route::get('forgot_password',[AuthController::class, 'forgot_password']);
  Route::get('register',[AuthController::class, 'register']);
  Route::post('register_post', [AuthController::class, 'RegisterPost']);
+ Route::post('checkemail', [AuthController::class, 'CheckEmail']);
 
-
+ 
